@@ -11,13 +11,6 @@ export const metadata: Metadata = {
   description: 'AI generated role playing game.',
 }
 
-const links = [
-  { href: '/', label: 'New Story' },
-  { href: '/', label: 'DAIM RPG' },
-  { href: '/sign-in', label: 'Login' },
-  { href: '/sign-up', label: 'Sign Up' },
-]
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,20 +19,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
-          <header className="w-screen bg-stone-900 text-white">
-            <nav>
-              <ul className="flex items-center justify-between">
-                {links.map(({ href, label }, idx) => (
-                  <li key={idx}>
-                    <Link href={href}>{label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </header>
-          {children}
-        </body>
+        <body className={inter.className}>{children}</body>
       </html>
     </ClerkProvider>
   )
