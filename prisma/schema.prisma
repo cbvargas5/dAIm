@@ -1,6 +1,14 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// to do:
+// Create schema to include:
+// - message/messages
+// - DM
+// - Game/storyline
+
+
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -12,9 +20,9 @@ datasource db {
 
 model User {
   id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  clerkId String @unique
+  email String @unique
+  openaiApiKey String? @unique
 }
-
-// model User {
-//   id String @id @default(uuid())
-//   createdAt DateTime @default(now())
-// }
