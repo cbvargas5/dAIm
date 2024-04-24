@@ -1,16 +1,15 @@
-import React from 'react'
 import WelcomeMsgBox from './components/WelcomeMsgBox'
 import StoryThreadArea from './components/StoryThreadArea'
 import PlayerTextInput from './components/PlayerTextInput'
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
-    <div className="w-screen h-screen bg-stone-800 flex flex-col justify-center items-center text-white">
+    <main className="w-screen h-screen bg-stone-800 flex flex-col justify-center items-center text-white">
       <WelcomeMsgBox />
       <StoryThreadArea />
       <PlayerTextInput />
-    </div>
+    </main>
   )
 }
 
-export default Home
+export default HomePage
