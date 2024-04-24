@@ -5,7 +5,7 @@ import PlayerTextInput from './components/PlayerTextInput'
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <div className="w-screen h-screen bg-stone-800 flex flex-col justify-center items-center text-white">
       <WelcomeMsgBox />
       <StoryThreadArea />
       <PlayerTextInput />

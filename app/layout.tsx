@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header>
+        <header className="w-screen bg-stone-900 text-white">
           <nav>
             <ul className="flex items-center justify-between">
               {links.map(({ href, label }, idx) => (
@@ -35,9 +35,7 @@ export default function RootLayout({
             </ul>
           </nav>
         </header>
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-          {children}
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   )
