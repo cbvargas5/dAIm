@@ -1,11 +1,16 @@
-// to change
-export default function Home() {
+import React from 'react'
+import WelcomeMsgBox from './components/WelcomeMsgBox'
+import StoryThreadArea from './components/StoryThreadArea'
+import PlayerTextInput from './components/PlayerTextInput'
+
+const Home: React.FC = () => {
   return (
-    <main>
-      <div>
-        <h1>Welcome to my Home Page</h1>
-        <p>Feel free to explore!</p>
-      </div>
-    </main>
+    <div>
+      <WelcomeMsgBox />
+      <StoryThreadArea />
+      <PlayerTextInput />
+    </div>
   )
 }
+
+export default Home
