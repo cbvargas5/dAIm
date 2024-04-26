@@ -64,19 +64,15 @@ const StoryThreadArea: React.FC = () => {
     }))
   }
   return (
-    <div className="w-full max-w-[600px] mx-auto">
-      {/* {messages.map((m) => (
-        <div key={m.id}>
-          {m.role === 'user' ? 'User: ' : 'AI: '}
-          {m.content}
-        </div>
-      ))} */}
-      {state.storyThread.map((threadMessage, idx) => (
-        <div key={idx} className="border-b-2 border-gray-300 mb-3 py-3">
-          <span className="font-bold opacity-60">{threadMessage?.role}:</span>{' '}
-          {threadMessage?.content}
-        </div>
-      ))}
+    <div className="w-full max-w-[600px] mx-auto h-screen flex flex-col justify-between">
+      <div className="overflow-y-auto">
+        {state.storyThread.map((threadMessage, idx) => (
+          <div key={idx} className="border-b-2 border-gray-300 mb-3 py-3">
+            <span className="font-bold opacity-60">{threadMessage?.role}:</span>{' '}
+            {threadMessage?.content}
+          </div>
+        ))}
+      </div>
       <PlayerTextInput
         textInputValue={state.newPlayerMessage}
         handleInputChange={handleInputChange}

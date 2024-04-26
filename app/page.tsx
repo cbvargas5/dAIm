@@ -15,7 +15,7 @@ const HomePage: React.FC = async () => {
   const { userId } = await auth()
   return (
     <>
-      <header className="w-screen bg-stone-900 text-white">
+      <header className="w-full bg-stone-900 text-white">
         <nav>
           <ul className="flex items-center justify-between">
             {links.map(({ href, label }, idx) => (
@@ -26,7 +26,7 @@ const HomePage: React.FC = async () => {
           </ul>
         </nav>
       </header>
-      <main className="w-screen h-screen bg-stone-800 flex flex-col justify-center items-center text-white">
+      <main className="w-full h-full bg-stone-800 flex flex-col justify-center items-center text-white">
         <WelcomeMsgBox />
         <StoryThreadWindow />
       </main>

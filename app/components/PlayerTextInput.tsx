@@ -24,25 +24,21 @@ const PlayerTextInput: React.FC<Props> = ({
 
   return (
     <form onSubmit={handleSubmit}>
-      <textarea
-        className="text-black"
-        placeholder="Message your DM"
-        onChange={handleInputChange}
-        value={textInputValue}
-      />
-      {/* to do: change to icon */}
-      <button type="submit">Submit</button>
+      <div className="flex items-center border border-gray-300 rounded-lg">
+        <textarea
+          className="flex-grow p-2 bg-transparent resize-none focus:outline-none"
+          placeholder="Message your DM"
+          onChange={handleInputChange}
+          value={textInputValue}
+        />
+        <button
+          type="submit"
+          className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none"
+        >
+          Submit
+        </button>
+      </div>
     </form>
-    // <form onSubmit={handleSubmitText}>
-    //   <textarea
-    //     className="text-black"
-    //     placeholder="Message your DM"
-    //     onChange={handleInputChange}
-    //     value={state.userInputText}
-    //   />
-    //   {/* to do: change to icon */}
-    //   <button type="submit">Submit</button>
-    // </form>
   )
 }
 
