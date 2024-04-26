@@ -24,8 +24,8 @@ export const POST = async (req: NextRequest) => {
   ])
 
   const dataToSend = {
-    aiResponseText: aiResponse.content,
-    fullResponseObject: aiResponse,
+    aiResponseMessage: { role: 'AI', content: aiResponse.content },
+    fullAiResponseObject: aiResponse,
   }
   return NextResponse.json({ data: dataToSend })
 }

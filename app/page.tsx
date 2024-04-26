@@ -1,6 +1,5 @@
 import WelcomeMsgBox from './components/WelcomeMsgBox'
 import StoryThreadWindow from './components/StoryThreadWindow'
-import PlayerTextInput from './components/PlayerTextInput'
 import Link from 'next/link'
 import { auth } from '@clerk/nextjs/server'
 
