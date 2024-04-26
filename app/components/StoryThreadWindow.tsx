@@ -3,6 +3,12 @@ import { useState } from 'react'
 import PlayerTextInput from './PlayerTextInput'
 import { useChat } from 'ai/react'
 import { ACTIVE_STORY_ENDPOINT } from '@/utils/constants/api-routes'
+import { HumanMessage } from '@langchain/core/messages'
+
+interface StoryThreadMessage {
+  role: 'Human' | 'AI'
+  content: string
+}
 
 const StoryThreadArea: React.FC = () => {
   // const { messages, input, handleInputChange, handleSubmit } = useChat({
@@ -12,7 +18,7 @@ const StoryThreadArea: React.FC = () => {
   //   },
   // })
   const initialState = {
-    storyThread: [],
+    storyThread: [] as StoryThreadMessage[],
     newPlayerMessage: '',
   }
 
@@ -21,6 +27,7 @@ const StoryThreadArea: React.FC = () => {
   const sendInputToAi = async (userInput: string) => {
     const formData = {
       newPlayerMessage: userInput,
+      storyThread: state.storyThread,
     }
     fetch(ACTIVE_STORY_ENDPOINT, {
       method: 'POST',
@@ -35,7 +42,7 @@ const StoryThreadArea: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     sendInputToAi(state.newPlayerMessage)
-    setState(initialState)
+    setState((prevState) => ({ ...prevState, newPlayerMessage: '' }))
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
