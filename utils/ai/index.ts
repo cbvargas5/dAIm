@@ -13,7 +13,7 @@ const modelVersions = {
   ballerOnBudget: 'gpt-3.5-turbo',
 }
 
-export const OPENAI_MODEL = modelVersions.ballerOnBudget
+export const OPENAI_MODEL = modelVersions.strongButPricy
 
 export const isDevEnvironment =
   process && process.env.NODE_ENV === 'development'

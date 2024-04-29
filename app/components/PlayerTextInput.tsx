@@ -24,8 +24,9 @@ const PlayerTextInput: React.FC<Props> = ({
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex items-center border border-gray-300 rounded-lg">
+      <div className="flex items-center border border-gray-300 rounded-lg p-2">
         <textarea
+          rows={1}
           className="flex-grow p-2 bg-transparent resize-none focus:outline-none"
           placeholder="Message your DM"
           onChange={handleInputChange}

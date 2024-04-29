@@ -2,7 +2,7 @@ import React from 'react'
 
 const WelcomeMsgBox: React.FC = () => {
   return (
-    <div className="w-full max-w-[600px] mx-auto">
+    <div className="w-full max-w-[600px] mx-auto flex-grow flex flex-col justify-center">
       <h1 className="text-xl mb-4">Welcome to DAIM: Your Adventure Awaits!</h1>
       <p className="text-lg text-white/60 mb-4">
         Welcome aboard DAIM—the ultimate playground for narrative enthusiasts!

@@ -1,4 +1,3 @@
-import WelcomeMsgBox from './components/WelcomeMsgBox'
 import StoryThreadWindow from './components/StoryThreadWindow'
 import Link from 'next/link'
 import { auth } from '@clerk/nextjs/server'
@@ -15,9 +14,9 @@ const HomePage: React.FC = async () => {
   const { userId } = await auth()
   return (
     <>
-      <header className="w-full bg-stone-900 text-white">
+      <header className="bg-stone-900 text-white py-4">
         <nav>
-          <ul className="flex items-center justify-between">
+          <ul className="flex items-center justify-between px-4">
             {links.map(({ href, label }, idx) => (
               <li key={idx}>
                 <Link href={href}>{label}</Link>
@@ -26,8 +25,7 @@ const HomePage: React.FC = async () => {
           </ul>
         </nav>
       </header>
-      <main className="w-full h-full bg-stone-800 flex flex-col justify-center items-center text-white">
-        <WelcomeMsgBox />
+      <main className=" flex flex-col justify-between h-full overflow-hidden items-center text-white py-4">
         <StoryThreadWindow />
       </main>
     </>
