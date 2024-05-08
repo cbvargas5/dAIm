@@ -5,7 +5,7 @@ import {
   SystemMessage,
 } from '@langchain/core/messages'
 // import { PromptTemplate } from 'langchain/prompts'
-import { SYSTEM_TEMPLATE } from '@/utils/constants/prompt-templates'
+import { SYSTEM_TEMPLATE } from '@/utils/ai/prompt-templates'
 import { ChatPromptTemplate, MessagesPlaceholder } from 'langchain/prompts'
 
 const modelVersions = {
